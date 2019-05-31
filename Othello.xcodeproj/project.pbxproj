@@ -15,6 +15,21 @@
 		DC1D354422A1005800BC42E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1D354222A1005800BC42E6 /* Main.storyboard */; };
 		DC1D354622A1005A00BC42E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1D354522A1005A00BC42E6 /* Assets.xcassets */; };
 		DC1D354922A1005A00BC42E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1D354722A1005A00BC42E6 /* LaunchScreen.storyboard */; };
+		DC1D355122A100CA00BC42E6 /* LocalNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355022A100CA00BC42E6 /* LocalNetworking.swift */; };
+		DC1D355322A100FF00BC42E6 /* OthelloNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355222A100FF00BC42E6 /* OthelloNetwork.swift */; };
+		DC1D355522A1015700BC42E6 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355422A1015700BC42E6 /* Marker.swift */; };
+		DC1D355722A1030200BC42E6 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355622A1030200BC42E6 /* Array2D.swift */; };
+		DC1D355922A1032800BC42E6 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355822A1032800BC42E6 /* Board.swift */; };
+		DC1D355B22A1244200BC42E6 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355A22A1244200BC42E6 /* BoardView.swift */; };
+		DC1D355D22A125BB00BC42E6 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355C22A125BB00BC42E6 /* MarkerView.swift */; };
+		DC1D355F22A129BE00BC42E6 /* OthelloDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355E22A129BE00BC42E6 /* OthelloDelegate.swift */; };
+		DC1D356122A133CD00BC42E6 /* MatchMakingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D356022A133CD00BC42E6 /* MatchMakingScene.swift */; };
+		DC1D356322A1343000BC42E6 /* MatchMakingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */; };
+		DC8D94EA22A1357F001091EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94E922A1357F001091EE /* Player.swift */; };
+		DC8D94EC22A13619001091EE /* RandomAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94EB22A13619001091EE /* RandomAIPlayer.swift */; };
+		DC8D94EE22A13E9A001091EE /* NetworkPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */; };
+		DC8D94F022A1A0D5001091EE /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */; };
+		DC8D94F222A1A2AD001091EE /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC8D94F122A1A2AD001091EE /* GameOverScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +43,21 @@
 		DC1D354522A1005A00BC42E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC1D354822A1005A00BC42E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC1D354A22A1005A00BC42E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC1D355022A100CA00BC42E6 /* LocalNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworking.swift; sourceTree = "<group>"; };
+		DC1D355222A100FF00BC42E6 /* OthelloNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthelloNetwork.swift; sourceTree = "<group>"; };
+		DC1D355422A1015700BC42E6 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		DC1D355622A1030200BC42E6 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		DC1D355822A1032800BC42E6 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		DC1D355A22A1244200BC42E6 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		DC1D355C22A125BB00BC42E6 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
+		DC1D355E22A129BE00BC42E6 /* OthelloDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthelloDelegate.swift; sourceTree = "<group>"; };
+		DC1D356022A133CD00BC42E6 /* MatchMakingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakingScene.swift; sourceTree = "<group>"; };
+		DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MatchMakingScene.sks; sourceTree = "<group>"; };
+		DC8D94E922A1357F001091EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DC8D94EB22A13619001091EE /* RandomAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAIPlayer.swift; sourceTree = "<group>"; };
+		DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlayer.swift; sourceTree = "<group>"; };
+		DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		DC8D94F122A1A2AD001091EE /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,7 @@
 		DC1D353722A1005800BC42E6 /* Othello */ = {
 			isa = PBXGroup;
 			children = (
+				DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */,
 				DC1D353822A1005800BC42E6 /* AppDelegate.swift */,
 				DC1D353A22A1005800BC42E6 /* GameScene.sks */,
 				DC1D353C22A1005800BC42E6 /* Actions.sks */,
@@ -69,6 +100,20 @@
 				DC1D354522A1005A00BC42E6 /* Assets.xcassets */,
 				DC1D354722A1005A00BC42E6 /* LaunchScreen.storyboard */,
 				DC1D354A22A1005A00BC42E6 /* Info.plist */,
+				DC1D355022A100CA00BC42E6 /* LocalNetworking.swift */,
+				DC1D355222A100FF00BC42E6 /* OthelloNetwork.swift */,
+				DC1D355422A1015700BC42E6 /* Marker.swift */,
+				DC1D355622A1030200BC42E6 /* Array2D.swift */,
+				DC1D355822A1032800BC42E6 /* Board.swift */,
+				DC1D355A22A1244200BC42E6 /* BoardView.swift */,
+				DC1D355C22A125BB00BC42E6 /* MarkerView.swift */,
+				DC1D355E22A129BE00BC42E6 /* OthelloDelegate.swift */,
+				DC1D356022A133CD00BC42E6 /* MatchMakingScene.swift */,
+				DC8D94E922A1357F001091EE /* Player.swift */,
+				DC8D94EB22A13619001091EE /* RandomAIPlayer.swift */,
+				DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */,
+				DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */,
+				DC8D94F122A1A2AD001091EE /* GameOverScene.sks */,
 			);
 			path = Othello;
 			sourceTree = "<group>";
@@ -131,11 +176,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8D94F222A1A2AD001091EE /* GameOverScene.sks in Resources */,
 				DC1D354422A1005800BC42E6 /* Main.storyboard in Resources */,
 				DC1D353B22A1005800BC42E6 /* GameScene.sks in Resources */,
 				DC1D354622A1005A00BC42E6 /* Assets.xcassets in Resources */,
 				DC1D354922A1005A00BC42E6 /* LaunchScreen.storyboard in Resources */,
 				DC1D353D22A1005800BC42E6 /* Actions.sks in Resources */,
+				DC1D356322A1343000BC42E6 /* MatchMakingScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +193,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1D355F22A129BE00BC42E6 /* OthelloDelegate.swift in Sources */,
+				DC1D355722A1030200BC42E6 /* Array2D.swift in Sources */,
 				DC1D353F22A1005800BC42E6 /* GameScene.swift in Sources */,
 				DC1D354122A1005800BC42E6 /* GameViewController.swift in Sources */,
 				DC1D353922A1005800BC42E6 /* AppDelegate.swift in Sources */,
+				DC8D94EC22A13619001091EE /* RandomAIPlayer.swift in Sources */,
+				DC8D94EA22A1357F001091EE /* Player.swift in Sources */,
+				DC1D355122A100CA00BC42E6 /* LocalNetworking.swift in Sources */,
+				DC1D355322A100FF00BC42E6 /* OthelloNetwork.swift in Sources */,
+				DC1D356122A133CD00BC42E6 /* MatchMakingScene.swift in Sources */,
+				DC8D94EE22A13E9A001091EE /* NetworkPlayer.swift in Sources */,
+				DC1D355B22A1244200BC42E6 /* BoardView.swift in Sources */,
+				DC1D355922A1032800BC42E6 /* Board.swift in Sources */,
+				DC1D355D22A125BB00BC42E6 /* MarkerView.swift in Sources */,
+				DC1D355522A1015700BC42E6 /* Marker.swift in Sources */,
+				DC8D94F022A1A0D5001091EE /* GameOverScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = info.isaksson.erland.Othello;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Othello-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = info.isaksson.erland.Othello;
+				PRODUCT_BUNDLE_IDENTIFIER = "info.isaksson.erland.Othello-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
