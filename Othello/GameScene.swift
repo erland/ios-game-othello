@@ -85,7 +85,7 @@ class GameScene: SKScene, BoardObserver {
     }
     func opponentPlaceMarker(x: Int, y: Int, state: Marker.State) {
         waitingForOpponent = false
-        instructionText?.text = "Place your marker"
+        instructionText?.text = "Place your marker (\(playerState!))"
         boardView!.board?.addMarker(state: state, x: x, y: y)
         othelloDelegate?.placeMarkerConfirmed(playerName: boardView!.board!.name, x: x, y: y, state: state)
         checkAndProcessGameEnding()
@@ -93,7 +93,7 @@ class GameScene: SKScene, BoardObserver {
 
     func readyForMarkerPlacement() {
         waitingForOpponent = false
-        instructionText?.text = "Place your marker"
+        instructionText?.text = "Place your marker (\(playerState!))"
     }
 
     func placeMarkerConfirmed(x: Int, y: Int, state: Marker.State) {
