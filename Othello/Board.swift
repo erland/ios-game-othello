@@ -179,10 +179,32 @@ class Board {
     }
     
     func isAllMarkersPlaced(state: Marker.State?) -> Bool {
+        var result = true
         for y in 0..<height {
             for x in 0..<width {
                 if board[x,y] == nil {
-                    return false
+                    result = false
+                    break
+                }
+            }
+            if !result {
+                break
+            }
+        }
+        if !result {
+            for y in 0..<height {
+                for x in 0..<width {
+                    if board[x,y] == nil {
+                        let whiteMarkers = findMarkersToChange(state: Marker.State.White, x: x, y: y)
+                        if whiteMarkers.count == 0 {
+                            let blackMarkers = findMarkersToChange(state: Marker.State.Black, x: x, y: y)
+                            if blackMarkers.count > 0 {
+                                return false
+                            }
+                        }else {
+                            return false
+                        }
+                    }
                 }
             }
         }

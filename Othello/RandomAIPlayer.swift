@@ -73,6 +73,9 @@ class RandomAIPlayer : Player {
     
     func placeMarkerConfirmed(delegate: OthelloDelegate, x: Int, y: Int, state: Marker.State) {
         board?.addMarker(state: state, x: x, y: y)
+        if board!.isAllMarkersPlaced(state: nil) {
+            delegate.gameComplete(playerName: playerName)
+        }
     }
     
     func placeMarker(delegate: OthelloDelegate, x: Int, y: Int, state: Marker.State) {

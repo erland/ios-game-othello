@@ -85,7 +85,6 @@ class GameScene: SKScene, BoardObserver {
         boardView!.board?.addMarker(state: state, x: x, y: y)
         updateStandingsText()
         othelloDelegate?.placeMarkerConfirmed(playerName: boardView!.board!.name, x: x, y: y, state: state)
-        checkAndProcessGameEnding()
     }
 
     func readyForMarkerPlacement() {
