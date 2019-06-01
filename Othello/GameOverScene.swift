@@ -29,11 +29,11 @@ class GameOverScene: SKScene {
         let myMarkers = boardView!.board!.noOfMarkers(with: playerState!)
         let opponentMarkers = boardView!.board!.noOfMarkers(with: opponentState)
         if myMarkers>opponentMarkers {
-            winnerText?.text = "You won!"
+            winnerText?.text = "You won! (\(myMarkers) - \(opponentMarkers))"
         }else if myMarkers==opponentMarkers {
             winnerText?.text = "It's a draw"
         }else {
-            winnerText?.text = "You lost"
+            winnerText?.text = "You lost (\(myMarkers) - \(opponentMarkers))"
         }
 
     }

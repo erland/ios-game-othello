@@ -13,7 +13,7 @@ class GameScene: SKScene, BoardObserver {
     var othelloDelegate: OthelloDelegate?
     var boardView : BoardView?
     var instructionText : SKLabelNode?
-    var colorText : SKLabelNode?
+    var standingsText : SKLabelNode?
     var passButton : SKLabelNode?
     var waitingForOpponent: Bool = true
     var playerState : Marker.State?
@@ -27,13 +27,9 @@ class GameScene: SKScene, BoardObserver {
         self.boardView?.setup(board: board)
         
         instructionText = childNode(withName: "instructionText") as? SKLabelNode
-        colorText = childNode(withName: "colorText") as? SKLabelNode
+        standingsText = childNode(withName: "standingsText") as? SKLabelNode
         passButton = childNode(withName: "passButton") as? SKLabelNode
-        if playerState == Marker.State.White {
-            colorText?.text = "Your color is: White"
-        }else {
-            colorText?.text = "Your color is: Black"
-        }
+        updateStandingsText()
         
         boardView?.board?.attachObserver(self)
     }
@@ -87,6 +83,7 @@ class GameScene: SKScene, BoardObserver {
         waitingForOpponent = false
         instructionText?.text = "Place your marker (\(playerState!))"
         boardView!.board?.addMarker(state: state, x: x, y: y)
+        updateStandingsText()
         othelloDelegate?.placeMarkerConfirmed(playerName: boardView!.board!.name, x: x, y: y, state: state)
         checkAndProcessGameEnding()
     }
@@ -98,6 +95,7 @@ class GameScene: SKScene, BoardObserver {
 
     func placeMarkerConfirmed(x: Int, y: Int, state: Marker.State) {
         boardView!.board?.addMarker(state: state, x: x, y: y)
+        updateStandingsText()
         checkAndProcessGameEnding()
     }
 
@@ -110,6 +108,14 @@ class GameScene: SKScene, BoardObserver {
     
     func markerAdded(marker: Marker) {
         // TODO: Calculate game over
+    }
+    
+    func updateStandingsText() {
+        let noOfMarkersMe = boardView!.board!.noOfMarkers(with: playerState!)
+        let opponentState = (playerState == Marker.State.White ? Marker.State.Black : Marker.State.White)
+        let noOfMarkersOpponent = boardView!.board!.noOfMarkers(with: opponentState)
+        
+        standingsText?.text = "\(playerState!): \(noOfMarkersMe)   \(opponentState): \(noOfMarkersOpponent)"
     }
     
 
