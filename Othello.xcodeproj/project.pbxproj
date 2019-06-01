@@ -30,6 +30,8 @@
 		DC8D94EE22A13E9A001091EE /* NetworkPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */; };
 		DC8D94F022A1A0D5001091EE /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */; };
 		DC8D94F222A1A2AD001091EE /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC8D94F122A1A2AD001091EE /* GameOverScene.sks */; };
+		DC8D94F422A25EF0001091EE /* MostWinsAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */; };
+		DC8D94F622A2608E001091EE /* WeightedAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlayer.swift; sourceTree = "<group>"; };
 		DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		DC8D94F122A1A2AD001091EE /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostWinsAIPlayer.swift; sourceTree = "<group>"; };
+		DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedAIPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */,
 				DC8D94EF22A1A0D5001091EE /* GameOverScene.swift */,
 				DC8D94F122A1A2AD001091EE /* GameOverScene.sks */,
+				DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */,
+				DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */,
 			);
 			path = Othello;
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 				DC1D355B22A1244200BC42E6 /* BoardView.swift in Sources */,
 				DC1D355922A1032800BC42E6 /* Board.swift in Sources */,
 				DC1D355D22A125BB00BC42E6 /* MarkerView.swift in Sources */,
+				DC8D94F422A25EF0001091EE /* MostWinsAIPlayer.swift in Sources */,
+				DC8D94F622A2608E001091EE /* WeightedAIPlayer.swift in Sources */,
 				DC1D355522A1015700BC42E6 /* Marker.swift in Sources */,
 				DC8D94F022A1A0D5001091EE /* GameOverScene.swift in Sources */,
 			);

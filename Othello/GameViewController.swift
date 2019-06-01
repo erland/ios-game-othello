@@ -16,6 +16,8 @@ class GameViewController: UIViewController, OthelloDelegate {
     var matchMakingScene : MatchMakingScene?
     var opponentPlayer : Player?
     var randomAIPlayer : RandomAIPlayer?
+    var mostWinsAIPlayer : MostWinsAIPlayer?
+    var weightedAIPlayer : WeightedAIPlayer?
     var playerState: Marker.State?
 
     override func viewDidLoad() {
@@ -44,6 +46,10 @@ class GameViewController: UIViewController, OthelloDelegate {
         skView.presentScene(scene)
         randomAIPlayer = RandomAIPlayer(name: "AI (very easy)")
         matchMakingScene?.addOpponent(name: "AI (very easy)")
+        mostWinsAIPlayer = MostWinsAIPlayer(name: "AI (very easy)")
+        matchMakingScene?.addOpponent(name: "AI (easy)")
+        weightedAIPlayer = WeightedAIPlayer(name: "AI (normal)")
+        matchMakingScene?.addOpponent(name: "AI (normal)")
 
         if let network = network {
             for player in network.players {
@@ -80,6 +86,10 @@ class GameViewController: UIViewController, OthelloDelegate {
         matchMakingScene = nil
         if player == "AI (very easy)" {
             opponentPlayer = randomAIPlayer
+        }else if player == "AI (easy)" {
+            opponentPlayer = mostWinsAIPlayer
+        }else if player == "AI (normal)" {
+            opponentPlayer = weightedAIPlayer
         }else {
             opponentPlayer = NetworkPlayer(network: network!, name: player)
         }
