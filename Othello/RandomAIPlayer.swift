@@ -54,7 +54,7 @@ class RandomAIPlayer : Player {
         )
     }
     func thinkTime() -> Double {
-        return 0.5
+        return 1.0
     }
     
     func readyForMarkerPlacement(delegate: OthelloDelegate) {

@@ -52,7 +52,7 @@ class GameViewController: UIViewController, OthelloDelegate {
         matchMakingScene?.addOpponent(name: "AI (easy)")
         weightedAIPlayer = WeightedAIPlayer(name: "AI (normal)")
         matchMakingScene?.addOpponent(name: "AI (normal)")
-        alphaBetaAIPlayer = AlphaBetaAIPlayer(name: "AI (hard)", depth: 2, delay: 0.3)
+        alphaBetaAIPlayer = AlphaBetaAIPlayer(name: "AI (hard)", depth: 2, delay: 0.6)
         matchMakingScene?.addOpponent(name: "AI (hard)")
         alphaBetaExtremeAIPlayer = AlphaBetaAIPlayer(name: "AI (extreme)", depth: 4)
         matchMakingScene?.addOpponent(name: "AI (extreme)")

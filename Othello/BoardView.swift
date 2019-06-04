@@ -13,15 +13,14 @@ class BoardView : SKSpriteNode, BoardObserver {
     var board: Board?
     var cellSize: CGFloat?
     var scale: CGFloat?
-    var showShootMarking: Bool = false
-    var lastShootMarking : SKShapeNode?
-    
-    func setup(board: Board, showShootMarking: Bool = false) {
+    var lastMarker : SKShapeNode?
+    var lastMarkersChanged : [SKShapeNode] = []
+
+    func setup(board: Board) {
         self.cellSize = size.width/CGFloat(board.width)
         print("\(size.width) with \(board.width) gives cellSize=\(cellSize!)")
         self.board = board
         self.scale = cellSize!/50.0
-        self.showShootMarking = showShootMarking
         let gridTexture = BoardView.createBoardGridTexture(x: board.width, y: board.height, cellSize: cellSize!)
         
         let gridSprite = SKSpriteNode(texture: gridTexture)
@@ -81,34 +80,27 @@ class BoardView : SKSpriteNode, BoardObserver {
         markerView.name = "marker"
         markerView.zPosition = 10
         addChild(markerView)
+        updateLastMarker(x: marker.x, y: marker.y, state: marker.state)
     }
     
-    private func updateLastShootMarking(x: Int, y: Int, hit: Bool) {
-        if showShootMarking {
-            if let lastShootMarking = self.lastShootMarking {
-                lastShootMarking.removeFromParent()
+    private func updateLastMarker(x: Int, y: Int, state: Marker.State) {
+        if board!.markers.count>4 {
+            if let lastMarker = self.lastMarker {
+                lastMarker.removeFromParent()
             }
-            lastShootMarking = SKShapeNode.init(rectOf: CGSize(width: cellSize!, height: cellSize!))
-            lastShootMarking?.position = CGPoint(x: CGFloat(x)*cellSize!+cellSize!/2, y: -CGFloat(y)*cellSize!-cellSize!/2)
-            lastShootMarking?.zPosition=15
-            if hit {
-                lastShootMarking?.strokeColor = UIColor.yellow
-                lastShootMarking?.lineWidth = 2.0
+            lastMarker = SKShapeNode.init(rectOf: CGSize(width: cellSize!, height: cellSize!))
+            lastMarker?.position = CGPoint(x: CGFloat(x)*cellSize!+cellSize!/2, y: -CGFloat(y)*cellSize!-cellSize!/2)
+            lastMarker?.zPosition=15
+            if state == Marker.State.White {
+                lastMarker?.strokeColor = UIColor.yellow
             }else {
-                lastShootMarking?.strokeColor = UIColor.white
+                lastMarker?.strokeColor = UIColor.red
             }
-            lastShootMarking?.run(
-                SKAction.repeat(
-                    SKAction.sequence([
-                        SKAction.fadeIn(withDuration: 0.1),
-                        SKAction.fadeOut(withDuration: 0.1)]),
-                    count: 20))
-            addChild(lastShootMarking!)
+            lastMarker?.lineWidth = 2.0
+            lastMarker?.run(
+                    SKAction.fadeOut(withDuration: 1.0))
+            addChild(lastMarker!)
         }
-    }
-    
-    func shootAt(x: Int, y: Int, hit: Bool) {
-        updateLastShootMarking(x: x, y: y, hit: hit)
     }
     
     func viewForMarker(marker: Marker) -> MarkerView? {
