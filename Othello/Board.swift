@@ -18,6 +18,7 @@ class Board {
     let board: Array2D<Marker>
     var markers: Set<Marker> = Set()
     var observers: [BoardObserver] = []
+    let debug = false
     
     init(name: String) {
         self.name = name
@@ -27,6 +28,11 @@ class Board {
         markers.insert(initMarker(state: Marker.State.White, x: 3, y: 4))
         markers.insert(initMarker(state: Marker.State.Black, x: 4, y: 4))
     }
+    init(name: String, board: Array2D<Marker>) {
+        self.name = name
+        self.board = board
+    }
+    
     private func initMarker(state: Marker.State, x: Int, y: Int) -> Marker {
         let m = Marker(state: state)
         m.x = x
@@ -59,24 +65,34 @@ class Board {
     }
     
     func addMarker(state: Marker.State, x: Int, y: Int) {
-        print("Board(\(name)): Trying to add \(state) at: \(x),\(y)")
+        if debug {
+            print("Board(\(name)): Trying to add \(state) at: \(x),\(y)")
+        }
         if x<0 || x >= width {
             // Outside board
-            print("Outside board")
+            if debug {
+                print("Outside board")
+            }
             return
         }
         if y<0 || y>=height {
             // Outside board
-            print("Outside board")
+            if debug {
+                print("Outside board")
+            }
             return
         }
         if board[x,y] != nil {
             // Already occupied
-            print("Already occupied")
+            if debug {
+                print("Already occupied")
+            }
             return
         }
         let markersToChange = findMarkersToChange(state: state, x: x, y: y)
-        print("Found \(markersToChange.count) markers to change if placed at: \(x),\(y)")
+        if debug {
+            print("Found \(markersToChange.count) markers to change if placed at: \(x),\(y)")
+        }
 
         if markersToChange.count == 0 {
             // No markers to change found, at least one needs to change for this to be an allowed position
@@ -93,8 +109,10 @@ class Board {
         for observer in observers {
             observer.markerAdded(marker: m)
         }
-        print("Board(\(name)): Added \(state) at: \(x),\(y)")
-        debugBoard()
+        if debug {
+            print("Board(\(name)): Added \(state) at: \(x),\(y)")
+            debugBoard()
+        }
     }
     
     func findMarkersToChange(state: Marker.State, x: Int, y: Int) -> [Marker] {
@@ -167,8 +185,7 @@ class Board {
             return []
         }else {
             // Reversed marker, keep searching
-            var result = [board[x+offsetX,y+offsetY]!]
-            print("Found potential win at: \(x+offsetX),\(y+offsetY)")
+            let result = [board[x+offsetX,y+offsetY]!]
             let markers = findInDirection(state:state, x:x+offsetX, y:y+offsetY, offsetX:offsetX, offsetY:offsetY)
             if markers != nil {
                 return result + markers!
@@ -223,21 +240,24 @@ class Board {
         return count
     }
     
-    func debugBoard() {
-        print("Board contents")
-        for y in 0..<height {
-            for x in 0..<width {
-                if board[x,y] != nil {
-                    if board[x,y]?.state == Marker.State.Black {
-                        print("X", terminator: "")
+    func debugBoard(debug: Bool? = nil) {
+        if self.debug || (debug != nil && debug!) {
+
+            print("Board contents")
+            for y in 0..<height {
+                for x in 0..<width {
+                    if board[x,y] != nil {
+                        if board[x,y]?.state == Marker.State.Black {
+                            print("X", terminator: "")
+                        }else {
+                            print("O", terminator: "")
+                        }
                     }else {
-                        print("O", terminator: "")
+                        print("_", terminator: "")
                     }
-                }else {
-                    print("_", terminator: "")
                 }
+                print()
             }
-            print()
         }
     }
     

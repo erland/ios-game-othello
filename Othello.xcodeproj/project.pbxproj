@@ -32,6 +32,7 @@
 		DC8D94F222A1A2AD001091EE /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC8D94F122A1A2AD001091EE /* GameOverScene.sks */; };
 		DC8D94F422A25EF0001091EE /* MostWinsAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */; };
 		DC8D94F622A2608E001091EE /* WeightedAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */; };
+		DC8D94F822A59CB9001091EE /* AlphaBetaAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94F722A59CB8001091EE /* AlphaBetaAIPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		DC8D94F122A1A2AD001091EE /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostWinsAIPlayer.swift; sourceTree = "<group>"; };
 		DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedAIPlayer.swift; sourceTree = "<group>"; };
+		DC8D94F722A59CB8001091EE /* AlphaBetaAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBetaAIPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				DC8D94F122A1A2AD001091EE /* GameOverScene.sks */,
 				DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */,
 				DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */,
+				DC8D94F722A59CB8001091EE /* AlphaBetaAIPlayer.swift */,
 			);
 			path = Othello;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				DC1D353922A1005800BC42E6 /* AppDelegate.swift in Sources */,
 				DC8D94EC22A13619001091EE /* RandomAIPlayer.swift in Sources */,
 				DC8D94EA22A1357F001091EE /* Player.swift in Sources */,
+				DC8D94F822A59CB9001091EE /* AlphaBetaAIPlayer.swift in Sources */,
 				DC1D355122A100CA00BC42E6 /* LocalNetworking.swift in Sources */,
 				DC1D355322A100FF00BC42E6 /* OthelloNetwork.swift in Sources */,
 				DC1D356122A133CD00BC42E6 /* MatchMakingScene.swift in Sources */,

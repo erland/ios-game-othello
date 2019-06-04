@@ -53,22 +53,25 @@ class RandomAIPlayer : Player {
                              state: (state == Marker.State.Black ? Marker.State.White : Marker.State.Black)
         )
     }
+    func thinkTime() -> Double {
+        return 0.5
+    }
     
     func readyForMarkerPlacement(delegate: OthelloDelegate) {
         print("AI preparing to shoot")
-        let position = getNextPosition()
-        if position != nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                print("AI shooting at \(position!.x),\(position!.y)")
-                delegate.placeMarker(playerName: self.playerName, x: position!.x, y: position!.y, state: self.myState!)
+        DispatchQueue.global().asyncAfter(deadline: .now() + thinkTime(), execute: {
+            let position = self.getNextPosition()
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                if position != nil {
+                    print("AI shooting at \(position!.x),\(position!.y)")
+                    delegate.placeMarker(playerName: self.playerName, x: position!.x, y: position!.y, state: self.myState!)
+                }else {
+                    print("No position found for \(self.myState!)")
+                    print("AI can't move, skipping")
+                    delegate.skipPlaceMarker(playerName: self.playerName)
+                }
             })
-        }else {
-           print("No position found for \(myState)")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                print("AI can't move, skipping")
-                delegate.skipPlaceMarker(playerName: self.playerName)
-            })
-        }
+        })
     }
     
     func placeMarkerConfirmed(delegate: OthelloDelegate, x: Int, y: Int, state: Marker.State) {

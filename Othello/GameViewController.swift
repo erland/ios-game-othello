@@ -18,6 +18,8 @@ class GameViewController: UIViewController, OthelloDelegate {
     var randomAIPlayer : RandomAIPlayer?
     var mostWinsAIPlayer : MostWinsAIPlayer?
     var weightedAIPlayer : WeightedAIPlayer?
+    var alphaBetaAIPlayer : AlphaBetaAIPlayer?
+    var alphaBetaExtremeAIPlayer : AlphaBetaAIPlayer?
     var playerState: Marker.State?
 
     override func viewDidLoad() {
@@ -50,6 +52,10 @@ class GameViewController: UIViewController, OthelloDelegate {
         matchMakingScene?.addOpponent(name: "AI (easy)")
         weightedAIPlayer = WeightedAIPlayer(name: "AI (normal)")
         matchMakingScene?.addOpponent(name: "AI (normal)")
+        alphaBetaAIPlayer = AlphaBetaAIPlayer(name: "AI (hard)", depth: 2, delay: 0.3)
+        matchMakingScene?.addOpponent(name: "AI (hard)")
+        alphaBetaExtremeAIPlayer = AlphaBetaAIPlayer(name: "AI (extreme)", depth: 4)
+        matchMakingScene?.addOpponent(name: "AI (extreme)")
 
         if let network = network {
             for player in network.players {
@@ -90,6 +96,10 @@ class GameViewController: UIViewController, OthelloDelegate {
             opponentPlayer = mostWinsAIPlayer
         }else if player == "AI (normal)" {
             opponentPlayer = weightedAIPlayer
+        }else if player == "AI (hard)" {
+            opponentPlayer = alphaBetaAIPlayer
+        }else if player == "AI (extreme)" {
+            opponentPlayer = alphaBetaExtremeAIPlayer
         }else {
             opponentPlayer = NetworkPlayer(network: network!, name: player)
         }

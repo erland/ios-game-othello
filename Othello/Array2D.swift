@@ -5,8 +5,9 @@
 //  Created by Erland Isaksson on 2019-04-29.
 //  Copyright © 2019 Erland Isaksson. All rights reserved.
 //
+import Foundation
 
-class Array2D<T> {
+class Array2D<T : NSCopying> : NSCopying {
     let columns: Int
     let rows: Int
     
@@ -19,6 +20,17 @@ class Array2D<T> {
         array = Array<T?>(repeating: nil, count:rows * columns)
     }
     
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Array2D<T>(columns: columns, rows: rows)
+        for y in 0..<rows {
+            for x in 0..<columns {
+                if let node = self[x,y] {
+                    copy[x,y] = (node.copy() as! T)
+                }
+            }
+        }
+        return copy
+    }
     
     subscript(column: Int, row: Int) -> T? {
         get {
