@@ -47,23 +47,10 @@ class MarkerView : SKSpriteNode, MarkerObserver {
         let positionX = CGFloat(marker.x)*cellSize+cellSize/2.0
         let positionY = -CGFloat(marker.y)*cellSize-cellSize/2.0
         self.position = CGPoint(x: positionX, y: positionY)
-        let flip = SKAction.scaleX(to: -1, duration: 0.2)
         if marker.state == Marker.State.White {
-            if texture == blackTexture {
-                let changeTexture = SKAction.run({ self.texture = self.whiteTexture})
-                let action = SKAction.sequence([flip, changeTexture])
-                run(action)
-            }else {
-                texture = whiteTexture
-            }
+            texture = whiteTexture
         }else {
-            if texture == whiteTexture {
-                let changeTexture = SKAction.run({ self.texture = self.blackTexture})
-                let action = SKAction.sequence([flip, changeTexture])
-                run(action)
-            }else {
-                texture = blackTexture
-            }
+            texture = blackTexture
         }
     }
     
