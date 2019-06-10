@@ -17,8 +17,8 @@ class MarkerView : SKSpriteNode, MarkerObserver {
     init(marker: Marker, cellSize: CGFloat) {
         self.cellSize = cellSize
         self.marker = marker
-        self.blackTexture = MarkerView.createMarkerTexture(cellSize: cellSize, borderColor: UIColor.black, fillColor: UIColor.black, alpha: 1.0)
-        self.whiteTexture = MarkerView.createMarkerTexture(cellSize: cellSize, borderColor: UIColor.white, fillColor: UIColor.white, alpha: 1.0)
+        self.blackTexture = MarkerView.createMarkerTexture(cellSize: cellSize, color: "black", alpha: 1.0)
+        self.whiteTexture = MarkerView.createMarkerTexture(cellSize: cellSize, color: "white", alpha: 1.0)
         var texture = blackTexture
         if marker.state == Marker.State.White {
             texture = whiteTexture
@@ -33,19 +33,16 @@ class MarkerView : SKSpriteNode, MarkerObserver {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private class func createMarkerTexture(cellSize: CGFloat, borderColor: UIColor, fillColor: UIColor, alpha: CGFloat) -> SKTexture? {
-        let shape = SKShapeNode.init(ellipseOf: CGSize(width: cellSize,
-                                                    height: cellSize))
-        shape.fillColor = fillColor
-        shape.strokeColor = borderColor
-        shape.alpha = alpha
+    private class func createMarkerTexture(cellSize: CGFloat, color: String, alpha: CGFloat) -> SKTexture? {
+        let sprite = SKSpriteNode(texture: SKTexture(imageNamed: color), color: .black, size: CGSize(width: cellSize, height: cellSize))
+        sprite.alpha = alpha
         let view = SKView(frame: CGRect(x: 0, y: 0, width: cellSize, height: cellSize))
-        return view.texture(from: shape)
+        return view.texture(from: sprite)
     }
     
     func markerUpdated(marker: Marker) {
-        let positionX = CGFloat(marker.x)*cellSize+cellSize/2.0
-        let positionY = -CGFloat(marker.y)*cellSize-cellSize/2.0
+        let positionX = CGFloat(marker.x)*(cellSize*1.02)+cellSize/2.0-5
+        let positionY = -CGFloat(marker.y)*(cellSize*1.02)-cellSize/2.0+5
         self.position = CGPoint(x: positionX, y: positionY)
         if marker.state == Marker.State.White {
             texture = whiteTexture

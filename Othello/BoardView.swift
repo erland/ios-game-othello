@@ -25,7 +25,7 @@ class BoardView : SKSpriteNode, BoardObserver {
         
         let gridSprite = SKSpriteNode(texture: gridTexture)
         gridSprite.anchorPoint = CGPoint(x: 0.0,y: 1.0)
-        gridSprite.position = CGPoint(x: -1.0, y: 1.0)
+        gridSprite.position = CGPoint(x: -25.0, y: 24.0)
         addChild(gridSprite)
 
         /*
@@ -43,26 +43,13 @@ class BoardView : SKSpriteNode, BoardObserver {
     private class func createBoardGridTexture(x: Int, y: Int, cellSize: CGFloat) -> SKTexture? {
         let boardWidth = CGFloat(x)*cellSize
         let boardHeight = CGFloat(y)*cellSize
-        let border = SKShapeNode.init(rectOf: CGSize(width: boardWidth,
-                                                     height: boardHeight))
-        border.strokeColor = UIColor.white
         
-        for row in 1..<(y) {
-            let line = BoardView.createLine(anchor: CGPoint(x: -boardWidth/2, y: -boardHeight/2),
-                                            from: CGPoint(x: 0.0, y: CGFloat(row)*cellSize),
-                                            to: CGPoint(x: boardWidth, y: CGFloat(row)*cellSize))
-            line.strokeColor = UIColor(red: 0.5, green: 0.7, blue: 0.9, alpha: 0.8)
-            border.addChild(line)
-        }
-        for column in 1..<(x) {
-            let line = BoardView.createLine(anchor: CGPoint(x: -boardWidth/2, y: -boardHeight/2),
-                                            from: CGPoint(x: CGFloat(column)*cellSize, y: 0),
-                                            to: CGPoint(x: CGFloat(column)*cellSize, y: boardHeight))
-            line.strokeColor = UIColor(red: 0.5, green: 0.7, blue: 0.9, alpha: 0.8)
-            border.addChild(line)
-        }
-        let view = SKView(frame: CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight))
-        return view.texture(from: border)
+        let board = SKSpriteNode(texture: SKTexture(imageNamed: "board"),
+                                 color: .black,
+                                 size: CGSize(width: boardWidth+50, height: boardHeight+50))
+        
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: boardWidth+50, height: boardHeight+50))
+        return view.texture(from: board)
     }
     
     private class func createLine(anchor: CGPoint, from:CGPoint, to: CGPoint) -> SKShapeNode {
@@ -89,7 +76,7 @@ class BoardView : SKSpriteNode, BoardObserver {
                 lastMarker.removeFromParent()
             }
             lastMarker = SKShapeNode.init(rectOf: CGSize(width: cellSize!, height: cellSize!))
-            lastMarker?.position = CGPoint(x: CGFloat(x)*cellSize!+cellSize!/2, y: -CGFloat(y)*cellSize!-cellSize!/2)
+            lastMarker?.position = CGPoint(x: CGFloat(x)*(cellSize!*1.02)+cellSize!/2-5, y: -CGFloat(y)*(cellSize!*1.02)-cellSize!/2+5)
             lastMarker?.zPosition=15
             if state == Marker.State.White {
                 lastMarker?.strokeColor = UIColor.yellow
