@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DC1D353922A1005800BC42E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D353822A1005800BC42E6 /* AppDelegate.swift */; };
 		DC1D353B22A1005800BC42E6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1D353A22A1005800BC42E6 /* GameScene.sks */; };
-		DC1D353D22A1005800BC42E6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1D353C22A1005800BC42E6 /* Actions.sks */; };
 		DC1D353F22A1005800BC42E6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D353E22A1005800BC42E6 /* GameScene.swift */; };
 		DC1D354122A1005800BC42E6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D354022A1005800BC42E6 /* GameViewController.swift */; };
 		DC1D354422A1005800BC42E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1D354222A1005800BC42E6 /* Main.storyboard */; };
@@ -25,6 +24,8 @@
 		DC1D355F22A129BE00BC42E6 /* OthelloDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D355E22A129BE00BC42E6 /* OthelloDelegate.swift */; };
 		DC1D356122A133CD00BC42E6 /* MatchMakingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D356022A133CD00BC42E6 /* MatchMakingScene.swift */; };
 		DC1D356322A1343000BC42E6 /* MatchMakingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */; };
+		DC3DBD7822FC4094002E0B99 /* SKScene+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3DBD7722FC4094002E0B99 /* SKScene+Localization.swift */; };
+		DC3DBD7922FC43C9002E0B99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC3DBD7B22FC43C9002E0B99 /* Localizable.strings */; };
 		DC8D94EA22A1357F001091EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94E922A1357F001091EE /* Player.swift */; };
 		DC8D94EC22A13619001091EE /* RandomAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94EB22A13619001091EE /* RandomAIPlayer.swift */; };
 		DC8D94EE22A13E9A001091EE /* NetworkPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */; };
@@ -39,7 +40,6 @@
 		DC1D353522A1005800BC42E6 /* Othello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Othello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D353822A1005800BC42E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC1D353A22A1005800BC42E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		DC1D353C22A1005800BC42E6 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		DC1D353E22A1005800BC42E6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DC1D354022A1005800BC42E6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DC1D354322A1005800BC42E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +56,9 @@
 		DC1D355E22A129BE00BC42E6 /* OthelloDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthelloDelegate.swift; sourceTree = "<group>"; };
 		DC1D356022A133CD00BC42E6 /* MatchMakingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakingScene.swift; sourceTree = "<group>"; };
 		DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MatchMakingScene.sks; sourceTree = "<group>"; };
+		DC3DBD7722FC4094002E0B99 /* SKScene+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Localization.swift"; sourceTree = "<group>"; };
+		DC3DBD7A22FC43C9002E0B99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC3DBD7C22FC4421002E0B99 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC8D94E922A1357F001091EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		DC8D94EB22A13619001091EE /* RandomAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAIPlayer.swift; sourceTree = "<group>"; };
 		DC8D94ED22A13E9A001091EE /* NetworkPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlayer.swift; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 				DC1D356222A1343000BC42E6 /* MatchMakingScene.sks */,
 				DC1D353822A1005800BC42E6 /* AppDelegate.swift */,
 				DC1D353A22A1005800BC42E6 /* GameScene.sks */,
-				DC1D353C22A1005800BC42E6 /* Actions.sks */,
 				DC1D353E22A1005800BC42E6 /* GameScene.swift */,
 				DC1D354022A1005800BC42E6 /* GameViewController.swift */,
 				DC1D354222A1005800BC42E6 /* Main.storyboard */,
@@ -123,6 +125,8 @@
 				DC8D94F322A25EF0001091EE /* MostWinsAIPlayer.swift */,
 				DC8D94F522A2608E001091EE /* WeightedAIPlayer.swift */,
 				DC8D94F722A59CB8001091EE /* AlphaBetaAIPlayer.swift */,
+				DC3DBD7B22FC43C9002E0B99 /* Localizable.strings */,
+				DC3DBD7722FC4094002E0B99 /* SKScene+Localization.swift */,
 			);
 			path = Othello;
 			sourceTree = "<group>";
@@ -169,6 +173,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = DC1D352C22A1005800BC42E6;
 			productRefGroup = DC1D353622A1005800BC42E6 /* Products */;
@@ -190,7 +195,7 @@
 				DC1D353B22A1005800BC42E6 /* GameScene.sks in Resources */,
 				DC1D354622A1005A00BC42E6 /* Assets.xcassets in Resources */,
 				DC1D354922A1005A00BC42E6 /* LaunchScreen.storyboard in Resources */,
-				DC1D353D22A1005800BC42E6 /* Actions.sks in Resources */,
+				DC3DBD7922FC43C9002E0B99 /* Localizable.strings in Resources */,
 				DC1D356322A1343000BC42E6 /* MatchMakingScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +224,7 @@
 				DC1D355D22A125BB00BC42E6 /* MarkerView.swift in Sources */,
 				DC8D94F422A25EF0001091EE /* MostWinsAIPlayer.swift in Sources */,
 				DC8D94F622A2608E001091EE /* WeightedAIPlayer.swift in Sources */,
+				DC3DBD7822FC4094002E0B99 /* SKScene+Localization.swift in Sources */,
 				DC1D355522A1015700BC42E6 /* Marker.swift in Sources */,
 				DC8D94F022A1A0D5001091EE /* GameOverScene.swift in Sources */,
 			);
@@ -243,6 +249,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		DC3DBD7B22FC43C9002E0B99 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC3DBD7A22FC43C9002E0B99 /* en */,
+				DC3DBD7C22FC4421002E0B99 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -250,6 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -311,6 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

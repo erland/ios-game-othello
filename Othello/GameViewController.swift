@@ -46,16 +46,16 @@ class GameViewController: UIViewController, OthelloDelegate {
         matchMakingScene = scene
         // Present the scene.
         skView.presentScene(scene)
-        randomAIPlayer = RandomAIPlayer(name: "AI (very easy)")
-        matchMakingScene?.addOpponent(name: "AI (very easy)")
-        mostWinsAIPlayer = MostWinsAIPlayer(name: "AI (very easy)")
-        matchMakingScene?.addOpponent(name: "AI (easy)")
-        weightedAIPlayer = WeightedAIPlayer(name: "AI (normal)")
-        matchMakingScene?.addOpponent(name: "AI (normal)")
-        alphaBetaAIPlayer = AlphaBetaAIPlayer(name: "AI (hard)", depth: 2, delay: 0.6)
-        matchMakingScene?.addOpponent(name: "AI (hard)")
-        alphaBetaExtremeAIPlayer = AlphaBetaAIPlayer(name: "AI (extreme)", depth: 4)
-        matchMakingScene?.addOpponent(name: "AI (extreme)")
+        randomAIPlayer = RandomAIPlayer(name: "AI (\(NSLocalizedString("veryEasy", comment: "veryEasy")))")
+        matchMakingScene?.addOpponent(name: "AI (\(NSLocalizedString("veryEasy", comment: "veryEasy")))")
+        mostWinsAIPlayer = MostWinsAIPlayer(name: "AI (\(NSLocalizedString("easy", comment: "easy")))")
+        matchMakingScene?.addOpponent(name: "AI (\(NSLocalizedString("easy", comment: "easy")))")
+        weightedAIPlayer = WeightedAIPlayer(name: "AI (\(NSLocalizedString("normal", comment: "normal")))")
+        matchMakingScene?.addOpponent(name: "AI (\(NSLocalizedString("normal", comment: "normal")))")
+        alphaBetaAIPlayer = AlphaBetaAIPlayer(name: "AI (\(NSLocalizedString("hard", comment: "hard")))", depth: 2, delay: 0.6)
+        matchMakingScene?.addOpponent(name: "AI (\(NSLocalizedString("hard", comment: "hard")))")
+        alphaBetaExtremeAIPlayer = AlphaBetaAIPlayer(name: "AI (\(NSLocalizedString("extreme", comment: "extreme")))", depth: 4)
+        matchMakingScene?.addOpponent(name: "AI (\(NSLocalizedString("extreme", comment: "extreme")))")
 
         if let network = network {
             for player in network.players {
@@ -90,15 +90,15 @@ class GameViewController: UIViewController, OthelloDelegate {
     
     func selectedOpponent(player: String, state: Marker.State) {
         matchMakingScene = nil
-        if player == "AI (very easy)" {
+        if player == "AI (\(NSLocalizedString("veryEasy", comment: "veryEasy")))" {
             opponentPlayer = randomAIPlayer
-        }else if player == "AI (easy)" {
+        }else if player == "AI (\(NSLocalizedString("easy", comment: "easy")))" {
             opponentPlayer = mostWinsAIPlayer
-        }else if player == "AI (normal)" {
+        }else if player == "AI (\(NSLocalizedString("normal", comment: "normal")))" {
             opponentPlayer = weightedAIPlayer
-        }else if player == "AI (hard)" {
+        }else if player == "AI (\(NSLocalizedString("hard", comment: "hard")))" {
             opponentPlayer = alphaBetaAIPlayer
-        }else if player == "AI (extreme)" {
+        }else if player == "AI (\(NSLocalizedString("extreme", comment: "extreme")))" {
             opponentPlayer = alphaBetaExtremeAIPlayer
         }else {
             opponentPlayer = NetworkPlayer(network: network!, name: player)

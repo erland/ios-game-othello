@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Othello
+
+  Created by Erland Isaksson on 2019-08-08.
+  Copyright © 2019 Erland Isaksson. All rights reserved.
+*/
+"youWon" = "Du vann";
+"youLost" = "Du förlorade";
+"itIsADraw" = "Oavgjort";
+"gameOver" = "Game Over";
+"waitingForOpponent" = "Väntar på motståndare";
+"selectOpponent" = "Välj motståndare";
+"passSkipTurn" = "Pass (Hoppa över)";
+"placeYourMarker" = "Placera din bricka";
+"White" = "Vit";
+"Black" = "Svart";
+"veryEasy" = "mycket enkel";
+"easy" = "enkel";
+"normal" = "normal";
+"hard" = "svår";
+"extreme" = "mycket svår";
+

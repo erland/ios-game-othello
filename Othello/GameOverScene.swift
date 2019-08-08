@@ -15,6 +15,10 @@ class GameOverScene: SKScene {
     var playerState: Marker.State?
     var openedTime: TimeInterval?
     
+    override func sceneDidLoad() {
+        localize()
+    }
+
     func setup(delegate: OthelloDelegate, board: Board, playerState: Marker.State) {
         self.othelloDelegate = delegate
         self.playerState = playerState
@@ -30,11 +34,11 @@ class GameOverScene: SKScene {
         let myMarkers = boardView!.board!.noOfMarkers(with: playerState!)
         let opponentMarkers = boardView!.board!.noOfMarkers(with: opponentState)
         if myMarkers>opponentMarkers {
-            winnerText?.text = "You won! (\(myMarkers) - \(opponentMarkers))"
+            winnerText?.text = "\(NSLocalizedString("youWon", comment: "youWon"))! (\(myMarkers) - \(opponentMarkers))"
         }else if myMarkers==opponentMarkers {
-            winnerText?.text = "It's a draw"
+            winnerText?.text = "\(NSLocalizedString("itIsADraw", comment: "itIsADraw"))"
         }else {
-            winnerText?.text = "You lost (\(myMarkers) - \(opponentMarkers))"
+            winnerText?.text = "\(NSLocalizedString("youLost", comment: "youLost")) (\(myMarkers) - \(opponentMarkers))"
         }
 
     }

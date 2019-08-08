@@ -18,6 +18,10 @@ class GameScene: SKScene, BoardObserver {
     var waitingForOpponent: Bool = true
     var playerState : Marker.State?
     
+    override func sceneDidLoad() {
+        localize()
+    }
+    
     func setup(delegate: OthelloDelegate, board: Board, playerState: Marker.State) {
         self.othelloDelegate = delegate
         self.playerState = playerState
@@ -59,7 +63,7 @@ class GameScene: SKScene, BoardObserver {
             return
         }
         waitingForOpponent = true
-        instructionText?.text = "Waiting for opponent"
+        instructionText?.text = NSLocalizedString("waitingForOpponent", comment: "waitingForOpponent")
         othelloDelegate?.skipPlaceMarker(playerName: boardView!.board!.name)
 
     }
@@ -73,7 +77,7 @@ class GameScene: SKScene, BoardObserver {
             if boardView!.board!.board[cellX,cellY] == nil {
                 if boardView!.board!.findMarkersToChange(state: playerState!, x: cellX, y: cellY).count>0 {
                     waitingForOpponent = true
-                    instructionText?.text = "Waiting for opponent"
+                    instructionText?.text = NSLocalizedString("waitingForOpponent", comment: "waitingForOpponent")
                     othelloDelegate?.placeMarker(playerName: boardView!.board!.name, x: cellX, y: cellY, state: playerState!)
                 }
             }
@@ -81,7 +85,7 @@ class GameScene: SKScene, BoardObserver {
     }
     func opponentPlaceMarker(x: Int, y: Int, state: Marker.State) {
         waitingForOpponent = false
-        instructionText?.text = "Place your marker (\(playerState!))"
+        instructionText?.text = "\(NSLocalizedString("placeYourMarker", comment: "placeYourMarker")) (\(NSLocalizedString("\(playerState!)", comment: "\(playerState!)")))"
         boardView!.board?.addMarker(state: state, x: x, y: y)
         updateStandingsText()
         othelloDelegate?.placeMarkerConfirmed(playerName: boardView!.board!.name, x: x, y: y, state: state)
@@ -89,7 +93,7 @@ class GameScene: SKScene, BoardObserver {
 
     func readyForMarkerPlacement() {
         waitingForOpponent = false
-        instructionText?.text = "Place your marker (\(playerState!))"
+        instructionText?.text = "\(NSLocalizedString("placeYourMarker", comment: "placeYourMarker")) (\(NSLocalizedString("\(playerState!)", comment: "\(playerState!)")))"
     }
 
     func placeMarkerConfirmed(x: Int, y: Int, state: Marker.State) {
@@ -114,7 +118,7 @@ class GameScene: SKScene, BoardObserver {
         let opponentState = (playerState == Marker.State.White ? Marker.State.Black : Marker.State.White)
         let noOfMarkersOpponent = boardView!.board!.noOfMarkers(with: opponentState)
         
-        standingsText?.text = "\(playerState!): \(noOfMarkersMe)   \(opponentState): \(noOfMarkersOpponent)"
+        standingsText?.text = "\(NSLocalizedString("\(playerState!)", comment: "\(playerState!)")): \(noOfMarkersMe)   \(NSLocalizedString("\(opponentState)", comment: "\(opponentState)")): \(noOfMarkersOpponent)"
     }
     
 
